@@ -111,10 +111,10 @@ def electronics():
     root.mainloop()
     
 def selected_item_1():
-    w_list = []
-    w_list_price =[]
-    price=[]
-    w_list_compare = []
+    w_list = []   # wishlisted products gets added here
+    w_list_price =[]   # wishlisted product's price gets added here
+    price=[]   # after sorting wishlisted product's price gets added here
+    w_list_compare = []   # after sorting wishlisted products gets added here
     for i in l2.curselection():
         items = l2.get(i)
         w_list.append(items)
@@ -173,10 +173,10 @@ def eatables():
     eat.mainloop()
     
 def selected_item_2():
-    w_list = []
-    w_list_price =[]
-    price=[]
-    w_list_compare = []
+    w_list = []   # wishlisted products gets added here
+    w_list_price =[]   # wishlisted product's price gets added here
+    price=[]   # after sorting wishlisted product's price gets added here
+    w_list_compare = []   # after sorting wishlisted products gets added here
     for i in l2.curselection():
         items = l2.get(i)
         w_list.append(items)
@@ -235,10 +235,10 @@ def clothes():
     cloth.mainloop()  
     
 def selected_item_3():
-    w_list = []
-    w_list_price =[]
-    price=[]
-    w_list_compare = []
+    w_list = []   # wishlisted products gets added here
+    w_list_price =[]   # wishlisted product's price gets added here
+    price=[]   # after sorting wishlisted product's price gets added here
+    w_list_compare = []   # after sorting wishlisted products gets added here
     for i in l2.curselection():
         items = l2.get(i)
         w_list.append(items)
@@ -298,10 +298,10 @@ def home_decor():
     home.mainloop()
 
 def selected_item_4():
-    w_list = []
-    w_list_price =[]
-    price=[]
-    w_list_compare = []
+    w_list = []   # wishlisted products gets added here
+    w_list_price =[]   # wishlisted product's price gets added here
+    price=[]   # after sorting wishlisted product's price gets added here
+    w_list_compare = []   # after sorting wishlisted products gets added here
     for i in l2.curselection():
         items = l2.get(i)
         w_list.append(items)
