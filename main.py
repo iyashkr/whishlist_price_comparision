@@ -119,7 +119,7 @@ def selected_item_1():
         items = l2.get(i)
         w_list.append(items)
 
-    global m
+ 
     conn = pymysql.connect(
         host = 'localhost',
         user = 'root',
@@ -181,7 +181,7 @@ def selected_item_2():
         items = l2.get(i)
         w_list.append(items)
     
-    global m
+ 
     conn = pymysql.connect(
         host = 'localhost',
         user = 'root',
@@ -243,7 +243,7 @@ def selected_item_3():
         items = l2.get(i)
         w_list.append(items)
     
-    global m
+
     conn = pymysql.connect(
         host = 'localhost',
         user = 'root',
@@ -306,7 +306,7 @@ def selected_item_4():
         items = l2.get(i)
         w_list.append(items)
     
-    global m
+
     conn = pymysql.connect(
         host = 'localhost',
         user = 'root',
@@ -338,12 +338,12 @@ def selected_item_4():
 #         a=str(price.append(j))
 #         lcp = tkinter.Label(home, textvariable=("\n".join(a)))
 #         lcp.place(x=240 ,y=340)
-    for j in w_list_price:
-        a= IntVar()
-        a.set(j)
-        price.append(c,str(a))
-    lcp = tkinter.Label(home, textvariable=price).place(x=240 ,y=340)
-    print(price)
+#     for j in w_list_price:
+#         a= IntVar()
+#         a.set(j)
+#         price.append(c,str(a))
+#     lcp = tkinter.Label(home, textvariable=price).place(x=240 ,y=340)
+#     print(price)
     
 def check():
     global m
