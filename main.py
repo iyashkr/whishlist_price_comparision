@@ -346,7 +346,7 @@ def selected_item_4():
 #     print(price)
     
 def check():
-    global m
+
     conn = pymysql.connect(
         host = 'localhost',
         user = 'root',
