@@ -9,7 +9,7 @@ import pymysql
 top = Tk()
 top.title('QuicKart')
 top.geometry("450x500")
-top['background']='#fff'
+top['background']='#e3f2fd'
  
 
                     #_______SIGN-UP WINDOW_______
@@ -17,25 +17,25 @@ def signup():
     top.destroy()
     global var0, var1,var2, var3, root  #will be used globally
     root = Tk(className= "Sign Up")
+    root.configure(background='#e3f2fd')
     root.geometry("450x500")
     var0, var1,var2, var3 = StringVar(),StringVar(),StringVar(), StringVar()
-    l0 = Label(root, text = "Enter your details to Sign-up", font="Algerian")
+    l0 = tkinter.Label(root, text = "Enter your details to Sign-up", font="Algerian", bg='#e3f2fd')
     l0.place(x = 80, y=70)
-    l1 = Label(root, text = "Enter Name", font= ('serif',10)).place(x = 30, y=150)
+    l1 = tkinter.Label(root, text = "Enter Name", font= ('serif',10), bg='#e3f2fd').place(x = 30, y=150)
     en1 = tkinter.Entry(root, width=30,textvariable=var0)
     en1.place(x = 200, y = 150 )
-    l2 = Label(root, text = "Enter Mobile Number", font= ('serif',10)).place(x = 30, y=200)
+    l2 = tkinter.Label(root, text = "Enter Mobile Number", font= ('serif',10), bg='#e3f2fd').place(x = 30, y=200)
     en2 = tkinter.Entry(root, width=30,textvariable=var1)
     en2.place(x = 200, y = 200 )
-    l3 = Label(root, text = "Enter Password", font= ('serif',10)).place(x = 30, y=250)
+    l3 = tkinter.Label(root, text = "Enter Password", font= ('serif',10), bg='#e3f2fd').place(x = 30, y=250)
     en3 = tkinter.Entry(root, width=30 ,textvariable=var2)
     en3.place(x = 200, y = 250 )
-    l4 = Label(root, text = "Confirm Password", font= ('serif',10)).place(x = 30, y=300)
+    l4 = tkinter.Label(root, text = "Confirm Password", font= ('serif',10), bg='#e3f2fd').place(x = 30, y=300)
     en4 = tkinter.Entry(root, width=30 ,textvariable=var3)
     en4.place(x = 200, y = 300 )
-    bu1 = tkinter.Button(root, text = "Sign Up", command=entry)
-    bu1.place(x = 190, y = 360 )
-    print(var0.get(),var1.get(),var2.get())
+    bu1 = tkinter.Button(root, text = "Sign Up", command=entry, width=15, bg="#8cd3ff")
+    bu1.place(x = 200, y = 360 )
     root.mainloop()
     
 def entry():
@@ -69,9 +69,10 @@ def products():
     pro = Tk()
     pro.title('Products')
     pro.geometry("450x500")
+    pro.configure(background='#e3f2fd')
     
-    l_0 =Label(pro,text="Select product type", width=20,font=("Algerian",20))
-    l_0.place(x=70,y=70)
+    l_0 =tkinter.Label(pro,text="Select product type", width=20,font=("Algerian",20), bg='#e3f2fd')
+    l_0.place(x=50,y=70)
     
     b_1 =tkinter.Button(pro, text='Electronics', command=electronics, width=15, height =3, bg="black",fg='white')
     b_1.place(x=75, y=150)
@@ -92,10 +93,11 @@ def electronics():
     root = Tk()
     root.title('Electronics')
     root.geometry("450x500")
+    root.configure(background='#e3f2fd')
     
-    l0 =Label(root,text="Electronics", width=20,font=("Algerian",20))
-    l0.place(x=155, y=30)
-    l1 =Label(root,text="Select from below items to wishlist", width=30,font=("serif",12))
+    l0 =tkinter.Label(root,text="Electronics", width=20,font=("Algerian",20), bg='#e3f2fd')
+    l0.place(x=55, y=30)
+    l1 =tkinter.Label(root,text="Select from below items to wishlist", width=30,font=("serif",12), bg='#e3f2fd')
     l1.place(x=90, y=80)
     
     l2= Listbox(root, selectmode='multiple', width=39, height=8)
@@ -119,7 +121,7 @@ def selected_item_1():
         items = l2.get(i)
         w_list.append(items)
 
- 
+
     conn = pymysql.connect(
         host = 'localhost',
         user = 'root',
@@ -143,7 +145,7 @@ def selected_item_1():
                 w_list_compare.append(j[0])
             else:
                 continue
-    lc = tkinter.Label(root, text=("\n".join(w_list_compare))).place(x=110 ,y=340)
+    lc = tkinter.Label(root, text=("\n".join(w_list_compare)), bg='#e3f2fd').place(x=110 ,y=340)
 
                     #_______EATABLES WINDOW_______
 
@@ -154,10 +156,11 @@ def eatables():
     eat = Tk()
     eat.title('Eatables')
     eat.geometry("450x500")
+    eat.configure(background='#e3f2fd')
     
-    l0 =Label(eat, text="Eatables", width=20,font=("Algerian",20))
-    l0.place(x=155, y=30)
-    l1 =Label(eat, text="Select from below items to wishlist", width=30,font=("serif",12))
+    l0 =tkinter.Label(eat, text="Eatables", width=20,font=("Algerian",20), bg='#e3f2fd')
+    l0.place(x=60, y=30)
+    l1 =tkinter.Label(eat, text="Select from below items to wishlist", width=30,font=("serif",12), bg='#e3f2fd')
     l1.place(x=90, y=80)
     
     l2= Listbox(eat, selectmode='multiple', width=39, height=8)
@@ -181,7 +184,7 @@ def selected_item_2():
         items = l2.get(i)
         w_list.append(items)
     
- 
+
     conn = pymysql.connect(
         host = 'localhost',
         user = 'root',
@@ -205,7 +208,7 @@ def selected_item_2():
                 w_list_compare.append(j[0])
             else:
                 continue
-    lc = tkinter.Label(eat, text=("\n".join(w_list_compare))).place(x=110 ,y=340)
+    lc = tkinter.Label(eat, text=("\n".join(w_list_compare)), bg='#e3f2fd').place(x=110 ,y=340)
     
                     #_______CLOTHES WINDOW_______
 
@@ -216,10 +219,11 @@ def clothes():
     cloth = Tk()
     cloth.title('Clothes')
     cloth.geometry("450x500")
+    cloth.configure(background='#e3f2fd')
     
-    l0 =Label(cloth,text="Clothes", width=20,font=("Algerian",20))
-    l0.place(x=165, y=30)
-    l1 =Label(cloth,text="Select from below items to wishlist", width=30,font=("serif",12))
+    l0 =tkinter.Label(cloth,text="Clothes", width=20,font=("Algerian",20), bg='#e3f2fd')
+    l0.place(x=60, y=30)
+    l1 =tkinter.Label(cloth,text="Select from below items to wishlist", width=30,font=("serif",12), bg='#e3f2fd')
     l1.place(x=90, y=80)
     
     l2= Listbox(cloth, selectmode='multiple', width=39, height=8)
@@ -243,7 +247,7 @@ def selected_item_3():
         items = l2.get(i)
         w_list.append(items)
     
-
+    global m
     conn = pymysql.connect(
         host = 'localhost',
         user = 'root',
@@ -267,7 +271,7 @@ def selected_item_3():
                 w_list_compare.append(j[0])
             else:
                 continue
-    lc = tkinter.Label(cloth, text=("\n".join(w_list_compare))).place(x=110 ,y=340)
+    lc = tkinter.Label(cloth, text=("\n".join(w_list_compare)), bg='#e3f2fd').place(x=110 ,y=340)
         
     
                     #_______HOME DECOR WINDOW_______
@@ -279,10 +283,11 @@ def home_decor():
     home = Tk()
     home.title('Home Decor')
     home.geometry("450x500")
+    home.configure(background='#e3f2fd')
     
-    l0 =Label(home,text="Home Decor", width=20,font=("Algerian",20))
-    l0.place(x=155, y=30)
-    l1 =Label(home,text="Select from below items to wishlist", width=30,font=("serif",12))
+    l0 =tkinter.Label(home,text="Home Decor", width=20,font=("Algerian",20), bg='#e3f2fd')
+    l0.place(x=55, y=30)
+    l1 =tkinter.Label(home,text="Select from below items to wishlist", width=30,font=("serif",12), bg='#e3f2fd')
     l1.place(x=90, y=80)
     
     l2= Listbox(home, selectmode='multiple', width=39, height=8)
@@ -330,7 +335,7 @@ def selected_item_4():
                 w_list_compare.append(j[0])
             else:
                 continue
-    lc = tkinter.Label(home, text=("\n".join(w_list_compare))).place(x=110 ,y=340)
+    lc = tkinter.Label(home, text=("\n".join(w_list_compare)), bg='#e3f2fd').place(x=110 ,y=340)
 #     price = str(w_list_price)
 #     lcp = tkinter.Label(home, text=(" ".join(price))).place(x=240 ,y=340)
 #     a = StringVar()
@@ -372,18 +377,18 @@ def check():
     conn.close()
 
 v1, v2 = StringVar(),StringVar()
-l0 =Label(top, text ="Welcome to QuicKart",font = ("Algerian",20))
+l0 =tkinter.Label(top, text ="Welcome to QuicKart",font = ("Algerian",20), bg='#e3f2fd')
 l0.place(x=70, y=50)
-l1 =Label(top, text="Enter Mobile Number", font= ('serif',10)).place(x=50, y=125)
+l1 =tkinter.Label(top, text="Enter Mobile Number", font= ('serif',10), bg='#e3f2fd').place(x=50, y=125)
 e1 =Entry(top,textvariable=v1, width=30).place(x=210, y=125)
 
-l2 =Label(top, text="Enter Password", font= ('serif',10)).place(x=50, y=175)
+l2 =tkinter.Label(top, text="Enter Password", font= ('serif',10), bg='#e3f2fd').place(x=50, y=175)
 e2 =Entry(top,textvariable=v2, width=30).place(x=210, y=175)
 
-bu1 =Button(top, text='Sign-In', command= check, width=15)
+bu1 =tkinter.Button(top, text='Sign-In', command= check, width=15, bg="#8cd3ff")
 bu1.place(x=210, y=230)
-l3 =Label(top, text="New to QuicKart?", font= ('serif',8)).place(x=165, y=300)
-bu1 =Button(top, text='Create a QuicKart account',command=signup, width=30)
+l3 =tkinter.Label(top, text="New to QuicKart?", font= ('serif',8), bg='#e3f2fd').place(x=185, y=300)
+bu1 =tkinter.Button(top, text='Create a QuicKart account',command=signup, width=30, bg="#8cd3ff")
 bu1.place(x=120, y=330)
 
 top.mainloop()
