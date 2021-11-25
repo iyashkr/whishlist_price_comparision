@@ -51,7 +51,7 @@ def entry():
             conn = pymysql.connect(
                 host = 'localhost',
                 user = 'root',
-                password = 'root',
+                password = 'Y@sh12122001',
                 db = 'db'
             )
             cur = conn.cursor()
@@ -84,7 +84,7 @@ def products():
     pro.mainloop()
 
                     #_______ELECTRONICS WINDOW_______
-    
+
 def electronics():
     pro.destroy()
     global l2
@@ -109,7 +109,7 @@ def electronics():
     bu.place(x=190, y=280)
     
     root.mainloop()
-    
+
 def selected_item_1():
     w_list = []   # wishlisted products gets added here
     w_list_price =[]   # wishlisted product's price gets added here
@@ -118,12 +118,12 @@ def selected_item_1():
     for i in l2.curselection():
         items = l2.get(i)
         w_list.append(items)
-    
+
     global m
     conn = pymysql.connect(
         host = 'localhost',
         user = 'root',
-        password = 'root',
+        password = 'Y@sh12122001',
         db = 'db',
     )
     cur = conn.cursor()
@@ -146,7 +146,7 @@ def selected_item_1():
     lc = tkinter.Label(root, text=("\n".join(w_list_compare))).place(x=110 ,y=340)
 
                     #_______EATABLES WINDOW_______
-    
+
 def eatables():
     pro.destroy()
     global l2
@@ -171,7 +171,7 @@ def eatables():
     bu.place(x=190, y=280)
     
     eat.mainloop()
-    
+
 def selected_item_2():
     w_list = []   # wishlisted products gets added here
     w_list_price =[]   # wishlisted product's price gets added here
@@ -185,7 +185,7 @@ def selected_item_2():
     conn = pymysql.connect(
         host = 'localhost',
         user = 'root',
-        password = 'root',
+        password = 'Y@sh12122001',
         db = 'db',
     )
     cur = conn.cursor()
@@ -235,10 +235,10 @@ def clothes():
     cloth.mainloop()  
     
 def selected_item_3():
-    w_list = []   # wishlisted products gets added here
-    w_list_price =[]   # wishlisted product's price gets added here
-    price=[]   # after sorting wishlisted product's price gets added here
-    w_list_compare = []   # after sorting wishlisted products gets added here
+    w_list = []
+    w_list_price =[]
+    price=[]
+    w_list_compare = []
     for i in l2.curselection():
         items = l2.get(i)
         w_list.append(items)
@@ -247,7 +247,7 @@ def selected_item_3():
     conn = pymysql.connect(
         host = 'localhost',
         user = 'root',
-        password = 'root',
+        password = 'Y@sh12122001',
         db = 'db',
     )
     cur = conn.cursor()
@@ -267,7 +267,7 @@ def selected_item_3():
                 w_list_compare.append(j[0])
             else:
                 continue
-    lc = tkinter.Label(cloth, text=("\n".join(w_list_compare))).place(x=110 ,y=340)       
+    lc = tkinter.Label(cloth, text=("\n".join(w_list_compare))).place(x=110 ,y=340)
         
     
                     #_______HOME DECOR WINDOW_______
@@ -310,7 +310,7 @@ def selected_item_4():
     conn = pymysql.connect(
         host = 'localhost',
         user = 'root',
-        password = 'root',
+        password = 'Y@sh12122001',
         db = 'db',
     )
     cur = conn.cursor()
@@ -331,20 +331,26 @@ def selected_item_4():
             else:
                 continue
     lc = tkinter.Label(home, text=("\n".join(w_list_compare))).place(x=110 ,y=340)
-    c=0
-#     for i in w_list_price:
-#         price[c] = str(i)
-#         c=c+1
-#         print(price)
-#     lcp = tkinter.Label(home, text=("\n".join(price))).place(x=200 ,y=340)
-    
+#     price = str(w_list_price)
+#     lcp = tkinter.Label(home, text=(" ".join(price))).place(x=240 ,y=340)
+#     a = StringVar()
+#     for j in w_list_price:
+#         a=str(price.append(j))
+#         lcp = tkinter.Label(home, textvariable=("\n".join(a)))
+#         lcp.place(x=240 ,y=340)
+    for j in w_list_price:
+        a= IntVar()
+        a.set(j)
+        price.append(c,str(a))
+    lcp = tkinter.Label(home, textvariable=price).place(x=240 ,y=340)
+    print(price)
     
 def check():
     global m
     conn = pymysql.connect(
         host = 'localhost',
         user = 'root',
-        password = 'root',
+        password = 'Y@sh12122001',
         db = 'db',
     )
     cur = conn.cursor()
@@ -364,7 +370,6 @@ def check():
         messagebox.showerror("Error","UserId does not exists")
         
     conn.close()
-
 
 v1, v2 = StringVar(),StringVar()
 l0 =Label(top, text ="Welcome to QuicKart",font = ("Algerian",20))
